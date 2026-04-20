@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { getProductById } from "../services/api"
+import { useCartStore } from "../store/cartStore"
 
 /* 
 Quando a URL tiver um ID, eu quero ler esse ID dentro do componente.
@@ -12,6 +13,7 @@ function ProductDetails() {
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const addToCart = useCartStore(state => state.addToCart)
 
   /* 
     useParams?
@@ -44,6 +46,7 @@ function ProductDetails() {
 
   return (
     <div style={{ padding: "20px" }}>
+      
       <h1>{product.title}</h1>
 
       <img 
@@ -60,6 +63,19 @@ function ProductDetails() {
           currency: "BRL"
         })}
       </h2>
+
+      <button style={{
+      marginTop: "20px",
+      padding: "10px",
+      cursor: "pointer"
+    }}
+        onClick={() => {
+        console.log("Produto adicionado:", product)
+        addToCart(product)
+        }}
+      >
+      Adicionar ao carrinho
+    </button>
     </div>
   )
 }

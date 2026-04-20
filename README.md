@@ -66,13 +66,48 @@ Estruturação inicial de pastas:
 * Requisições assíncronas com `fetch`
 * Renderização condicional
 
+## 🚀 Sprint 3 — Carrinho de Compras
+
+### ✨ Funcionalidades implementadas
+
+* Implementação de estado global com Zustand
+* Adição de produtos ao carrinho
+* Controle de quantidade por produto
+* Evita duplicação de itens no carrinho
+* Remoção de produtos do carrinho
+* Persistência dos dados com `localStorage`
+* Criação da página de carrinho (`/cart`)
+* Exibição de:
+
+  * Nome do produto
+  * Quantidade
+  * Preço unitário
+  * Subtotal por item
+* Cálculo do total geral do carrinho
+
+### 🧠 Conceitos aplicados
+
+* Gerenciamento de estado global (Zustand)
+* Imutabilidade de estado
+* Manipulação de arrays (`map`, `filter`, `reduce`)
+* Persistência de dados no navegador
+* Separação de responsabilidades (store vs UI)
+* Renderização dinâmica baseada em estado global
+
+### 📌 Rotas adicionadas
+
+* `/cart` → Página de carrinho de compras
+
+
+
+
 ---
 
 ## 📌 Progresso do Projeto
 
 - ✅ Sprint 1 — Listagem de produtos
 - ✅ Sprint 2 — Navegação e detalhes
-- ⏳ Sprint 3 — Carrinho de compras
+- ✅ Sprint 3 — Carrinho de compras
 - ⏳ Sprint 4 — Melhorias e finalização
 
 
