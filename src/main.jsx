@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client"
 import { BrowserRouter } from "react-router-dom"
 /* O react-router-dom serve para criar navegação entre páginas no React, sem recarregar o site. */
 import App from "./App.jsx"
+import "./styles/global.css"
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(

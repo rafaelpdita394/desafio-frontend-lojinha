@@ -45,14 +45,22 @@ function ProductDetails() {
   if (!product) return <p>Produto não encontrado</p>
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div style={{
+  padding: "20px",
+  maxWidth: "600px",
+  margin: "0 auto"
+}}>
       
       <h1>{product.title}</h1>
 
       <img 
         src={product.image} 
         alt={product.title}
-        style={{ width: "200px" }}
+        style={{
+  width: "50%",
+  maxWidth: "300px",
+  objectFit: "contain"
+}}
       />
 
       <p>{product.description}</p>
@@ -64,18 +72,15 @@ function ProductDetails() {
         })}
       </h2>
 
-      <button style={{
-      marginTop: "20px",
-      padding: "10px",
-      cursor: "pointer"
-    }}
-        onClick={() => {
-        console.log("Produto adicionado:", product)
-        addToCart(product)
-        }}
-      >
-      Adicionar ao carrinho
-    </button>
+      <button
+  className="button"
+  onClick={() => {
+    console.log("Produto adicionado:", product)
+    addToCart(product)
+  }}
+>
+  Adicionar ao carrinho
+</button>
     </div>
   )
 }

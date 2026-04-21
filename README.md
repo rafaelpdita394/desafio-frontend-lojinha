@@ -98,18 +98,65 @@ Estruturação inicial de pastas:
 
 * `/cart` → Página de carrinho de compras
 
+## 🚀 Sprint 4 — UI Avançada, UX e Funcionalidades Modernas
 
+### ✨ Melhorias implementadas
 
+* Criação de Header fixo com navegação
+* Contador dinâmico de itens no carrinho (badge)
+* Implementação de Dark Mode (alternância de tema)
+* Layout moderno com gradientes e identidade visual consistente
+* Melhorias visuais nos componentes (cards, botões, espaçamento)
 
 ---
 
-## 📌 Progresso do Projeto
+### 🎨 UI/UX (Experiência do Usuário)
 
-- ✅ Sprint 1 — Listagem de produtos
-- ✅ Sprint 2 — Navegação e detalhes
-- ✅ Sprint 3 — Carrinho de compras
-- ⏳ Sprint 4 — Melhorias e finalização
+* Cards de produtos com efeito hover e animação
+* Skeleton loading (loading visual moderno)
+* Feedback visual mais fluido durante carregamento
+* Layout responsivo com grid adaptativo
+* Sidebar de categorias para navegação rápida
 
+---
+
+### 🔎 Funcionalidades Avançadas
+
+* Busca de produtos com debounce (otimização de performance)
+* Filtro por categoria (dinâmico a partir da API)
+* Integração entre busca + filtro
+* Atualização em tempo real da UI
+
+---
+
+### 🧠 Conceitos aplicados
+
+* Custom Hooks (`useDebounce`)
+* Controle de re-render e otimização de input
+* Composição de filtros em arrays
+* Manipulação avançada de estado
+* Design system com variáveis CSS
+* Separação entre lógica e apresentação
+
+---
+
+### 🎯 Diferenciais do projeto
+
+* Interface moderna inspirada em aplicações reais
+* Uso de padrões profissionais de UI/UX
+* Estrutura preparada para escalabilidade
+* Código organizado e reutilizável
+
+---
+
+### 📌 Progresso do Projeto
+
+* ✅ Sprint 1 — Listagem de produtos
+* ✅ Sprint 2 — Navegação e detalhes
+* ✅ Sprint 3 — Carrinho de compras
+* ✅ Sprint 4 — UI avançada e experiência do usuário
+
+---
 
 ## ▶️ Como rodar
 ```bash

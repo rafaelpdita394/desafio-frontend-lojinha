@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #0b0f1a;
+  --bg-secondary: #121826;
+
+  --primary: #7c3aed;   /* roxo */
+  --secondary: #06b6d4; /* azul */
+  --accent: #ec4899;    /* rosa */
+
+  --text: #e5e7eb;
+  --text-muted: #9ca3af;
+
+  --border: #1f2937;
+}
+
+body {
+  background: linear-gradient(135deg, #0b0f1a, #121826);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+}
+
+.button {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}

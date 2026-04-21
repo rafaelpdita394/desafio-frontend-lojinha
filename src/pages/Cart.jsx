@@ -3,14 +3,16 @@ import { useCartStore } from "../store/cartStore"
 function Cart() {
   const cart = useCartStore(state => state.cart)
   const removeFromCart = useCartStore(state => state.removeFromCart)
+  const increase = useCartStore(state => state.increaseQuantity)
+  const decrease = useCartStore(state => state.decreaseQuantity)
 
   const total = cart.reduce((acc, item) => {
     return acc + item.price * item.quantity
   }, 0)
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Carrinho</h1>
+    <div style={{ padding: "20px", maxWidth: "900px", margin: "0 auto" }}>
+      <h1 style={{ marginBottom: "20px" }}>Carrinho</h1>
 
       {cart.length === 0 ? (
         <p>Seu carrinho está vazio</p>
@@ -20,45 +22,83 @@ function Cart() {
             <div
               key={item.id}
               style={{
-                borderBottom: "1px solid #ccc",
-                marginBottom: "10px",
-                paddingBottom: "10px"
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                borderBottom: "1px solid var(--border)",
+                padding: "15px 0"
               }}
             >
-              <h3>{item.title}</h3>
+              {/* INFO */}
+              <div style={{ maxWidth: "300px" }}>
+                <h3>{item.title}</h3>
 
-              <p>Quantidade: {item.quantity}</p>
+                <p style={{ color: "var(--text-muted)" }}>
+                  {item.price.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL"
+                  })}
+                </p>
+              </div>
 
-              <p>
-                Preço unitário:{" "}
-                {item.price.toLocaleString("pt-BR", {
-                  style: "currency",
-                  currency: "BRL"
-                })}
-              </p>
+              {/* QUANTIDADE */}
+              <div style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px"
+              }}>
+                <button className="button" onClick={() => decrease(item.id)}>
+                  -
+                </button>
 
-              <p>
-                Subtotal:{" "}
-                {(item.price * item.quantity).toLocaleString("pt-BR", {
-                  style: "currency",
-                  currency: "BRL"
-                })}
-              </p>
+                <span>{item.quantity}</span>
 
-              <button onClick={() => removeFromCart(item.id)}>
-                Remover
+                <button className="button" onClick={() => increase(item.id)}>
+                  +
+                </button>
+              </div>
+
+              {/* SUBTOTAL */}
+              <div>
+                <strong>
+                  {(item.price * item.quantity).toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL"
+                  })}
+                </strong>
+              </div>
+
+              {/* REMOVER */}
+              <button
+              
+                onClick={() => removeFromCart(item.id)}
+                style={{
+                  background: "transparent",
+                  border: "none",
+                  color: "red",
+                  cursor: "pointer"
+                }}
+              >
+                ✕
               </button>
             </div>
           ))}
 
-          {/* 🔥 TOTAL FORA DO MAP */}
-          <h2 style={{ marginTop: "20px" }}>
-            Total do carrinho:{" "}
-            {total.toLocaleString("pt-BR", {
-              style: "currency",
-              currency: "BRL"
-            })}
-          </h2>
+          {/* TOTAL */}
+          <div style={{
+            marginTop: "30px",
+            display: "flex",
+            justifyContent: "space-between",
+            fontSize: "20px"
+          }}>
+            <strong>Total:</strong>
+            <strong>
+              {total.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL"
+              })}
+            </strong>
+          </div>
         </>
       )}
     </div>
