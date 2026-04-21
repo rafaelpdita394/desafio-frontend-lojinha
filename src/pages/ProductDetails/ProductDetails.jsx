@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
-import { getProductById } from "../services/api"
-import { useCartStore } from "../store/cartStore"
+import { getProductById } from "../../services/api"
+import { useCartStore } from "../../store/cartStore"
 
 /* 
 Quando a URL tiver um ID, eu quero ler esse ID dentro do componente.

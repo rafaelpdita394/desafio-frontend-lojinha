@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom"
-import Home from "./pages/Home"
-import ProductDetails from "./pages/ProductDetails"
-import Cart from "./pages/Cart"
+import Home from "./pages/Home/Home"
+import ProductDetails from "./pages/ProductDetails/ProductDetails"
+import Cart from "./pages/Cart/Cart"
 /*import { useCartStore } from "./store/cartStore" */
-import Header from "./components/Header"
+import Header from "./components/layout/Header"
 
 
 function App() {
@@ -18,7 +18,9 @@ function App() {
     <>
     <Header/>
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home
+      
+      />} />
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/Cart" element={<Cart />} />
     </Routes>
